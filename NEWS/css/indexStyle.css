@@ -1,0 +1,13 @@
+.newsImage{
+    width: 100%;
+    object-fit: scale-down;
+    height: 100%;
+}
+.imageHolder{
+    height: 300px;
+}
+#getMoreNEWS{
+    padding: 10px 16px;
+    margin: auto;
+    /* display: none; */
+}

@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Javascript MVC</title>
+    
+    <!-- bootsrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+        <!-- indexStyle.css -->
+    <link rel="stylesheet" href="css/indexStyle.css">
+
+</head>
+
+
+<body>
+
+    <div class="js-container" style="padding: 25px;">
+
+      
+
+        <div class="js-NEWSs-container    row" >
+            <!-- <div class="col-lg-4 animated  ITEM" id="1" style="padding:15px;margin-bottom: 15px;" > 
+				<div id="imageHolder">
+					<img class="newsImage"  src=" https://www.newsbtc.com/wp-content/uploads/2020/02/shutterstock_1402759703-1200x780.jpg"/>
+				</div>
+                <div style="border: 1px solid #eee; padding: 10px; text-align: center;">
+                    <p>kj;lj;ldkfjg;lsdkjg;lskdjfglksdjf;glkjsd;flgk</p>
+                </div>
+                
+			</div> -->
+			
+            
+		</div>
+		<div class="row">
+			<div class="btn btn-success" id="getMoreNEWS">more</div>
+		</div>
+	
+		
+      
+     
+      
+
+    </div>
+    <!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+   <!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+    
+    <script src="js/EventDispatcher.js"></script>
+    <script src="js/NEWSModel.js"></script>
+    <script src="js/NEWSView.js"></script>
+    <script src="js/NEWSController.js"></script>
+	<script src="js/NEWS.js"></script>
+	<script>
+		const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+		const source = urlParams.get('soucrce');
+	    
+		$(function () {
+        var model = new NEWSModel(source);
+        view = new NEWSView(model,1);
+        controller = new NEWSController(model, view,1);
+   });
+
+	</script>
+	<script>
+		$(document).ready(function(){
+			$('.ITEM').each(function(){
+				var id = $(this).attr('id');
+				// hide our element on page load
+				$('#'+id).css('opacity', 0);
+				$('#'+id).waypoint(function() {
+					if (id % 3 === 0){
+						$('#'+id).addClass('fadeIn ');
+						$('#'+id).css('animation-delay', '400ms');
+						
+					}
+					else if (id % 3 === 1){
+						$('#'+id).addClass('fadeIn');
+
+						
+					}
+					else if (id % 3 === 2){
+						$('#'+id).addClass('fadeIn');
+						$('#'+id).css('animation-delay', '200ms');
+
+						
+					}
+					
+				}, { offset: '50%' });
+			})
+		
+
+		});
+	</script>
+
+    
+
+</body>
+
+</html>
