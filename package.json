@@ -1,0 +1,22 @@
+{
+  "name": "newsapi",
+  "version": "1.0.0",
+  "description": "beta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farzdmhb/newsapi.git"
+  },
+  "keywords": [
+    "newsapi"
+  ],
+  "author": "farzad mohebi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farzdmhb/newsapi/issues"
+  },
+  "homepage": "https://github.com/farzdmhb/newsapi#readme"
+}
